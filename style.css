@@ -144,74 +144,133 @@ border:4px solid var(--sky-blue);
 }
 
 /* ========================= */
-/* HERO SECTION */
+/* HERO / LEADERSHIP SECTION */
 /* ========================= */
 
 .hero{
-
-text-align:center;
-
-padding:120px 0;
-
-background:linear-gradient(
-135deg,
-var(--pastel-petal),
-var(--icy-blue)
-);
-
-position:relative;
-
-overflow:hidden;
-
+  text-align:center;
+  padding:120px 0;
+  background:linear-gradient(135deg, var(--pastel-petal), var(--icy-blue));
+  position:relative;
+  overflow:hidden;
 }
 
-/* soft background blur shapes */
-
 .hero::before{
-
-content:"";
-
-position:absolute;
-
-width:400px;
-height:400px;
-
-background:var(--thistle);
-
-border-radius:50%;
-
-filter:blur(120px);
-
-top:-120px;
-left:-120px;
-
-opacity:0.5;
-
+  content:"";
+  position:absolute;
+  width:400px;
+  height:400px;
+  background:var(--thistle);
+  border-radius:50%;
+  filter:blur(120px);
+  top:-120px;
+  left:-120px;
+  opacity:0.5;
 }
 
 .hero::after{
-
-content:"";
-
-position:absolute;
-
-width:350px;
-height:350px;
-
-background:var(--sky-blue);
-
-border-radius:50%;
-
-filter:blur(120px);
-
-bottom:-120px;
-right:-120px;
-
-opacity:0.5;
-
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  background:var(--sky-blue);
+  border-radius:50%;
+  filter:blur(120px);
+  bottom:-120px;
+  right:-120px;
+  opacity:0.5;
 }
 
+/* Titles */
+.main-title{
+  font-size:50px;
+  margin-bottom:10px;
+}
 
+.subtitle{
+  color:#444;
+  margin-bottom:50px; /* breathing space after page subtitle */
+}
+
+.section-subtitle{
+  font-size:28px;
+  margin-top:80px; /* space after PM row */
+  margin-bottom:40px;
+  color:#333;
+}
+
+/* Leadership Grids */
+.leadership-grid{
+  display:grid;
+  gap:40px; /* vertical + horizontal gap */
+  justify-items:center;
+  position:relative;
+  z-index:2;
+}
+
+.pm-row{
+  grid-template-columns:1fr;
+  margin-bottom:60px; /* extra space after PM card before controllers */
+}
+
+.controller-row{
+  grid-template-columns:repeat(2,1fr);
+  gap:50px 40px; /* vertical gap + horizontal gap for better spacing */
+}
+
+/* Leader Cards */
+.leader-card{
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(12px);
+  border-radius:18px;
+  padding:30px;
+  width:260px;
+  transition:all 0.35s ease;
+  border:1px solid rgba(255,255,255,0.6);
+}
+
+/* PM Card Highlight */
+.pm{
+  width:300px;
+}
+
+/* Parliamentary Controllers Accent */
+.controller{
+  border:2px solid var(--baby-pink);
+}
+
+/* Hover Animation */
+.leader-card:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 25px 60px rgba(0,0,0,0.15);
+}
+
+/* Profile Images */
+.profile-img{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:15px;
+  border:5px solid white;
+  box-shadow:0 8px 25px rgba(0,0,0,0.15);
+  transition:0.3s;
+}
+
+.leader-card:hover .profile-img{
+  transform:scale(1.05);
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .controller-row{
+    grid-template-columns:1fr;
+    gap:30px; /* space between stacked controller cards */
+  }
+  .pm-row{
+    margin-bottom:50px; /* adjust for mobile */
+  }
+}
 
 
 /* ========================= */
